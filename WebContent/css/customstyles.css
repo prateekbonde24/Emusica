@@ -1,0 +1,45 @@
+.navbar-inverse
+{
+	background-color:#000E64;
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+	color:#c4c3c4;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+   background-color: #000B4E;
+}
+@media (min-width: 1200px) {
+	.navbar-form
+	{
+		width:25%;
+	
+	}
+}
+
+.navbar-form .form-group
+{
+	width:100%;
+}
+#comments
+{
+	height:200px;
+	overflow: scroll;
+	overflow-x:hidden;
+	background-color: #000;
+	opacity:0.6;
+	border-radius:10px;
+	box-shadow:10px 10px 5px #888888
+} 
+#comments > p
+{
+	width:100%;
+	background-color: #fff;
+	margin:0;
+	paddin:2px;
+	border-bottom: 1px solid #000;
+	padding-left:10px;
+}

@@ -1,0 +1,384 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#ffffff;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+
+/*----------------------------
+	Styling the forms
+-----------------------------*/
+
+
+.formContainer{
+	width:369px;
+	height:411px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+	
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+
+
+
+.formContainer form{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+/* Firefox Keyframe Animation */
+@-moz-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 32px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+/* Webkit keyframe animation */
+@-webkit-keyframes pulse{
+	0%{		box-shadow:0 0 1px #008aff;}
+	50%{	box-shadow:0 0 35px #008aff;}
+	100%{	box-shadow:0 0 1px #008aff;}
+}
+
+#login{
+	background:url('img/login_form_bg.jpg') no-repeat;
+	z-index:100;
+}
+
+
+#recover{
+	background:url('img/recover_form_bg.jpg') no-repeat;
+	z-index:1;
+	opacity:0;
+	
+	/* Rotating the recover password form by default */
+	-moz-transform:rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+
+#signup{
+	background:url('img/clean_form_bg.jpg') no-repeat;
+	z-index:100;
+	opacity:0;
+	
+	/* Rotating the recover password form by default */
+	-moz-transform:rotateY(-180deg);
+	-webkit-transform:rotateY(-180deg);
+	transform:rotateY(-180deg);
+}
+.formContainer.flipped #login{
+	
+	opacity:0;
+	
+	/**
+	 * Rotating the login form when the
+	 * flipped class is added to the container
+	 */
+	
+	-moz-transform:rotateY(-180deg);
+	-webkit-transform:rotateY(-180deg);
+	transform:rotateY(-180deg);
+}
+
+.formContainer.flipped1 #login{
+	
+	opacity:0;
+	
+	/**
+	 * Rotating the login form when the
+	 * flipped class is added to the container
+	 */
+	
+	-moz-transform:rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+
+.formContainer.flipped #recover{
+	
+	opacity:1;
+	
+	/* Rotating the recover div into view */
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+.formContainer.flipped1 #signup{
+	
+	opacity:1;
+	
+	/* Rotating the recover div into view */
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+/*----------------------------
+	Inputs, Buttons & Links
+-----------------------------*/
+#rab1{
+	top:30%;
+	left:35%;
+	z-index:11000;
+	font-family: cursive;
+	position:absolute;
+		color:#eeeeee;
+	font:18px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+	
+}
+#rab1{
+	top:30%;
+	left:50%;
+	font-family: cursive;
+	z-index: 11000;
+	
+	position:absolute;
+		color:#eeeeee;
+	font:18px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+}
+
+#rab2{
+	top:30%;
+	left:50%;
+	font-family: cursive;
+	z-index: 11000;
+	
+	position:absolute;
+		color:#eeeeee;
+	font:18px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+}#rab2{
+	top:30%;
+	left:50%;
+	font-family: cursive;
+	z-index: 11000;
+	
+	position:absolute;
+		color:#eeeeee;
+	font:18px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+}
+#login .flipLink,
+#signup.fliplink,
+#recover .flipLink{
+	
+	/* The blue ribbon links */
+	
+	height: 65px;
+    overflow: hidden;
+    position: absolute;
+    right:0;
+    text-indent: 1px;
+    top: 0;
+    width: 65px;
+}
+
+
+#recover .flipLink{
+	right:auto;
+	left:0;
+}
+#signup .flipLink{
+	right:auto;
+	left:0;
+}
+
+#login:after{
+	/* The "Click here" tooltip */
+	width:98px;
+	height:16px;
+	content:'';
+	background:url('img/click_here.png') no-repeat;
+	position:absolute;
+	right:-120px;
+	top:22px;
+}
+#move{
+	left:14%;
+	margin-top:20px;
+}
+
+input[type=text],input[type=password]{
+	/* The text fields */
+	font: 20px 'Segoe UI',Arial,sans-serif;
+	border: none;
+	background:none;
+	height: 50px;
+	left: 55px;
+	position: absolute;
+	margin-top: 65px;
+	top: 170px;
+	width: 255px;
+	text-indent: 10px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	color:#eee;
+	outline:none;
+}
+
+#loginPass{
+	top: 215px;
+}
+
+#loginPass1{
+	top: 150px;
+}
+#loginPass2{
+	top: 205px;
+}
+#loginEmail1{
+	top: 90px;
+}
+#signemail{
+	height: 24px;
+
+}
+#signpass{
+	height: 30px;
+	margin-bottom: 20px;
+
+}
+
+#recoverEmail{
+	top:215px;
+}
+
+input[type=submit]{
+	
+	/* Submit button */
+	
+	opacity:0.5;
+	position:absolute;
+	top:350px;
+	left:40px;
+	width: 289px;
+	height:46px;
+	cursor:pointer;
+	border-radius:6px;
+	box-shadow:0 1px 1px #888;
+	border:none;
+	color:#000000;
+	font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+	
+	/* CSS3 Gradients */
+	
+	background-image: linear-gradient(bottom, rgb(150,152,157) 50%, rgb(178,179,176))50%, rgb(225,225,225) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(150,152,157) 50%, rgb(178,179,176)) 50%, rgb(225,225,225) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(150,152,157) 50%, rgb(178,179,176)) 50%, rgb(225,225,225) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(150,152,157) 50%, rgb(178,179,176)) 50%, rgb(225,225,225) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(150,152,157) 50%, rgb(178,179,176)) 50%, rgb(225,225,225) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(175,173,177)),
+		color-stop(0.5, rgb(178,179,176)),
+		color-stop(1, rgb(225,225,225))
+	);
+}
+
+input[type=submit]:hover{
+	opacity:1;
+}
+
+input::-webkit-input-placeholder {
+    color:#79c;
+}
+
+
+.tabs input[type=radio] {
+	          position: absolute;
+	          top: -9999px;
+	          left: -9999px;
+	      }
+	      .tabs {
+	        width: 650px;
+	        float: none;
+	        list-style: none;
+	        position: absolute;
+	        padding: 0;
+	        margin: 75px auto;
+	        margin-top: -40px;
+	        padding-top: 85px;
+	        padding-left: 300px;
+	      }
+	      .tabs li{
+	        float: left;
+	      }
+	      .tabs label {
+	          display: block;
+	          padding: 10px 20px;
+	          border-radius: 2px 2px 0 0;
+	          color: #08C;
+	          font-size: 24px;
+	          font-weight: normal;
+	          font-family: 'Roboto', helveti;
+	          background: rgba(255,255,255,0.2);
+	          cursor: pointer;
+	          position: relative;
+	          top: 3px;
+	          -webkit-transition: all 0.2s ease-in-out;
+	          -moz-transition: all 0.2s ease-in-out;
+	          -o-transition: all 0.2s ease-in-out;
+	          transition: all 0.2s ease-in-out;
+	      }
+	      .tabs label:hover {
+	        background: rgba(255,255,255,0.5);
+	        top: 0;
+	      }
+	      
+	      [id^=tab]:checked + label {
+	        background: #08C;
+	        color: white;
+	        top: 0;
+	      }
+	      
+	      [id^=tab]:checked ~ [id^=tab-content] {
+	          display: block;
+	      }
+	      .main{
+	      left:100px;
+	      top:-70px;}
+
